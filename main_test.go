@@ -17,15 +17,8 @@ func TestFunc(t *testing.T) {
 		{"https://google.com", 200},
 		{"https://gmail.com", 200},
 		{"https://httpstat.us/200", 200},
-		// {"https://httpstat.us/503", 503},
+		{"https://httpstat.us/503", 503},
 	}
-	registry := prometheus.NewRegistry()
-	_ = registry.Register(responseTime)
-	_ = registry.Register(urlUp)
-	gwHandler := promhttp.HandlerFor(registry, promhttp.HandlerOpts{})
-	http.Handle("/metrics", gwHandler)
-	go log.Fatal(http.ListenAndServe(":2222", nil))
-
 	for _, test := range tests {
 
 		out := instrumentedHandler(test.input)
