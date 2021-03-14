@@ -8,7 +8,8 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=0 /go/src/github.com/github.com/shambanna-u/prome-go-lib/prome-go-lib .
-CMD ["./prome-go-lib"]  
+EXPOSE 2222
+# CMD ["./prome-go-lib"]  
 
 # FROM golang
 #  RUN go get -u github.com/shambanna-u/prome-go-lib

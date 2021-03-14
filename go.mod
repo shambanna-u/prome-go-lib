@@ -1,4 +1,4 @@
-module github.com/prome-go-lib
+module github.com/shambanna-u/prome-go-lib
 
 go 1.16
 
