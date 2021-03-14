@@ -7,7 +7,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
 FROM alpine:latest  
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
-COPY --from=0 /go/src/github.com/github.com/shambanna-u/prome-go-lib/prome-go-lib .
+COPY --from=0 /go/src/github.com/github.com/shambanna-u/prome-go-lib/app .
 EXPOSE 2222
 CMD ["./app"]  
 
