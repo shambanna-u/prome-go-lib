@@ -8,17 +8,7 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 RUN ls -al
-COPY --from=0 /go/src/github.com/github.com/shambanna-u/prome-go-lib/app .
+COPY --from=0 /go/src/github.com/shambanna-u/prome-go-lib/app .
 RUN ls - al
 EXPOSE 2222
-CMD ["./app"]  
-
-# FROM golang
-#  RUN go get -u github.com/shambanna-u/prome-go-lib
-#  ENV GO111MODULE=on
-#  ENV GOFLAGS=-mod=vendor
-#  ENV APP_HOME /go/src/mathapp
-#  RUN mkdir -p $APP_HOME
-#  WORKDIR $APP_HOME
-#  EXPOSE 2222
-# #  CMD ["/prome-go-lib"]
+CMD ["./app"]
