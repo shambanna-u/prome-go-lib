@@ -1,7 +1,7 @@
 FROM golang
 WORKDIR /go/src/github.com/shambanna-u/prome-go-lib
 RUN go get -d -v github.com/shambanna-u/prome-go-lib
-# COPY main.go .
+COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
 
 #FROM alpine:latest  
