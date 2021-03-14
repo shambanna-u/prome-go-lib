@@ -1,12 +1,7 @@
 package main
 
 import (
-	"log"
-	"net/http"
 	"testing"
-
-	"github.com/prometheus/client_golang/prometheus"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 func TestFunc(t *testing.T) {
