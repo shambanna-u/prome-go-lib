@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-lib
+spec:
+  selector:
+    matchLabels:
+      run: go-lib
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: go-lib
+    spec:
+      containers:
+      - name: go-lib
+        image:  shambuu/prome:latest
+        ports:
+        - containerPort: 2222
+
