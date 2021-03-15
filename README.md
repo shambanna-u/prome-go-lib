@@ -17,10 +17,29 @@ Run the following command to create the resources.
 ```
    $ kubectl apply -f kube/
 ```
-### Services are exported with following urls
+![Image of kubestatus](https://github.com/shambanna-u/prome-go-lib/blob/main/.img/kube-status.PNG)
+* Services are exported with following urls
 
-- Prometheus: http://{{node_ip}}:30100/
+  - Prometheus: http://{{node_ip}}:30100/
+  - Grafana: http://{{node_ip}}:30200/
+  - Applicaion: http://{{node_ip}}:30300/metrics
 
-- Grafana: http://{{node_ip}}:30200/
+* If you check the application endpoint output will be similar to this
 
-- Applicaion: http://{{node_ip}}:30300/
+![Image of metrics](https://github.com/shambanna-u/prome-go-lib/blob/main/.img/metrics.PNG)
+* Prometheus endpoints are alredy configured to get from applicaion by using service endpoint.
+
+![Image of targe](https://github.com/shambanna-u/prome-go-lib/blob/main/.img/target.PNG)
+
+* Run the PQL to get the metrics
+
+![Image of pql](https://github.com/shambanna-u/prome-go-lib/blob/main/.img/prome-ui.PNG)
+
+* Grafana dashboard is already configured with Data source
+
+
+![Image of grafana](https://github.com/shambanna-u/prome-go-lib/blob/main/.img/datasource.PNG)
+
+* dashboard.json is added in this repo, import the dashboard.
+
+![Image of output](https://github.com/shambanna-u/prome-go-lib/blob/main/.img/dashboard.PNG)
