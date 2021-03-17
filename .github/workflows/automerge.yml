@@ -1,0 +1,13 @@
+- name: GitHub AutoMerge Action
+  # You may pin to the exact commit or the version.
+  # uses: nucleos/auto-merge-action@334ff37497e589e175dfd150e48b46baf9928d32
+  uses: nucleos/auto-merge-action@1.0.0
+  with:
+    # Repository name to check. Default or empty value represents current github repository (${GITHUB_REPOSITORY})
+    repository: # optional, default is 
+    # Label that indicates a pull request for merge.
+    label: # optional, default is automerge
+    # Label that forbids a merge.
+    ignore_label: # optional, default is wip
+    # Additional options (e.g. --dry-run)
+    options: # optional
